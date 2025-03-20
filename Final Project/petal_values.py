@@ -9,7 +9,7 @@ url = "https://docs.google.com/spreadsheets/d/1M4GVrWIwBFvq14DaJubvQ5bRJ-9mTB1Mp
 # Reading the spreadsheet
 df = pd.read_csv(url)
 
-#print(df["Descriptor: "])
+
 # Flower types
 flowers = ["daisy", "orchid", "violet"]
 
