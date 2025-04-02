@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BD-Bud | Home | Plant Identifiert</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/uploads.css">
     <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
 
@@ -22,23 +23,27 @@
     </header>
 
     <main>
-        <div id="hero">
-            <div id="hero-box">
-               <img id="hero-img" src="images/hero.jpg" alt="A cute greenhouse"> 
+        <div class="container">
+            <div class="button-group">
+                <button>Image Search</button>
+                <button>Image Upload</button>
             </div>
-            <section id="hero-msg">
-                <h1 class="home-title">Welcome to BD-Bud!</h1>
-                <h4>Your go-to plant identification app.</h4>
-            </section>
-          </div>
-
-        <div id="try-now">
-            <h2>Discover What BD-Bud Can Do!</h2>
-            <img id="try-now-img" src="images/cuteBD.jpg" alt="cute BD">
-            <div class="text-box">
-                <p>Ever wonder what that cute little sprout in your garden is called? Or maybe you spotted a flower on your walk and just had to know its name?  BD-Bud is here to help!  Think of us as your friendly plant whisperer, right in your pocket.  Just snap a pic (or pick one from our garden gallery!) and let BD-Bud work its magic. We'll tell you all about your new green friend, so you can learn and grow together!</p>
-                <a class="try" href="uploads.html">Try it now!</a>
+    
+            <div class="upload-area">
+                <h2>Image Upload</h2>
+                <input type="file" id="imageUpload" name="imageUpload">
+                <button>Submit</button>
             </div>
+   
+            <div class="search-area">
+                <h2>Image Search/selectorbar</h2>
+                <form id="search-form">
+                  <input type="text" id="search-input" placeholder="Search for plants...">
+                  <button id="search-button">Search</button>
+                </form>
+                <div id="search-results"></div> </div>
+    
+            <p>Currently the only Images You can search is the Daisy, Violet, and Orchid</p>
         </div>
     </main>
 
@@ -58,5 +63,6 @@
             </a>
         </div>
       </footer>
+    <script src="js/uploads.js"></script>
 </body>
 </html>

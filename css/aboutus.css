@@ -1,0 +1,119 @@
+/* about us styles */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* doing the root coloring and stuff */
+:root {
+    /* COlor Palsate */
+    --primary-color: #88293E;
+    --secondary-color: #5F8F90;
+    --accent1-color: #BEE0E0;
+    --accent2-color: #2D333F;
+    --accent3-color: #f0f0f0;
+
+    /* MY Fontq) */
+    --heading-font: "Sour Gummy", cursive;
+    --paragraph-font: "Delius", Helvetica, sans-serif;
+}
+
+/* Global Styles */
+
+
+#info-about-me img, #bd-dreams img{
+    max-width: 500px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px var(--secondary-color);
+}
+
+main{
+    height: min-content;
+}
+
+/*info section*/
+
+
+#info-about-me{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: min-content min-content;
+    row-gap: 20px;
+    padding: 20px;
+    margin: 200px 10% 5% 10%;
+    width: 80%;
+} 
+    #info-about-me h2{
+        grid-column: 1/3;
+        grid-row: 1/2;
+        text-align: left;
+        font-size: 2em;
+        color: var(--primary-color);
+    }
+    #info-about-me img{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        height: auto;
+        width:auto;
+        max-width: 500px;
+    }
+    #info-about-me ul {
+        list-style-type: none;
+        padding-left: 30px;
+        margin-top: 5px;
+    }
+    .text-box p{
+        font-size: 1.1em;
+    }
+
+
+#bd-dreams{
+    grid-column: 1/3;
+    grid-row: 2/3;
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: min-content min-content;
+    row-gap: 20px;
+    column-gap: 20px;
+    margin: 5% 10%; 
+    width: 80%;
+}
+    #bd-dreams h2{
+        grid-column: 1/3;
+        grid-row: 1/2;
+        text-align: left;
+        font-size: 2em;
+        color: var(--primary-color);
+        height: fit-content;
+        margin: 0;
+    }
+    #bd-dreams  img{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        background-color: var(--accent3-color);
+        height: auto;
+        width:auto;
+        max-width: 500px;
+    }
+    #bd-dreams .text-box{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding-top: 0px;
+    }
+    #dreams-list{
+        list-style-type: none;
+        margin-top: 5px;
+        color: var(--primary-color);
+    }
+        #dreams-list li{
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            padding-left: 30px;
+        }
+        #dreams-list label{
+            font-size: 2em;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
