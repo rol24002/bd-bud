@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const imageUploadButton = document.querySelector('.button-group button:nth-child(2)');
     const uploadArea = document.querySelector('.upload-area');
     const searchArea = document.querySelector('.search-area');
-  
+    const resultsDiv = document.getElementById('identificationResults');
+    const imageUploadInput = document.getElementById('uploadedImage');
+    const submitButton = document.getElementById('submitButton');
+
     // Initially hide both areas
     uploadArea.style.display = 'none';
     searchArea.style.display = 'none';
@@ -23,6 +26,45 @@ document.addEventListener('DOMContentLoaded', function() {
       searchArea.style.display = 'none';
       uploadArea.style.display = 'block';
     });
+    //submit button
+    submitButton.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent form submission
+  
+      const file = imageUploadInput.files[0];
+      // Your submit logic here
+      console.log('Submit button clicked');
+
+      if (file) {
+          // Display the uploaded image
+          const reader = new FileReader();
+          reader.onload = function(e) {
+              uploadedImageDiv.innerHTML = `<img src="${e.target.result}" alt="Uploaded Image"">`;
+          };
+          reader.readAsDataURL(file);
+
+          const formData = new FormData();
+          formData.append('image', file);
+
+          fetch('/identify', {
+              method: 'POST',
+              body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (data.plant) {
+                  resultsDiv.innerHTML = `<p>Plant Identified: <strong>${data.plant}</strong></p>`;
+              } else if (data.error) {
+                  resultsDiv.innerHTML = `<p>Error: ${data.error}</p>`;
+              }
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              resultsDiv.innerHTML = '<p>An error occurred during plant identification.</p>';
+          });
+      } else {
+          resultsDiv.innerHTML = '<p>Please select an image.</p>';
+      }
+  });
   });
 
 //Searcg javascript

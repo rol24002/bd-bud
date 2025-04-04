@@ -87,7 +87,19 @@ h2{
         text-align: center;
         width: fit-content;
     }
-
+    #identificationResults {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid var(--accent2-color);
+        background-color: var(--primary-color);
+        color: var(--accent3-color);
+    }
+    uploadedImage {
+        margin-top: 20px;
+        max-width: 100%;
+        height: auto;
+        max-width: 500px;
+    }
 
 /* search section*/
 .search-area input[type="text"] {
